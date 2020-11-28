@@ -27,6 +27,9 @@ int main(int argc, char* argv[])
 	DoCleanup(); // Cleanup program before closing
 
 	printf("Program exitting...\n");
+	do {
+		std::cout << "Press enter when ready to end program...";
+	} while (std::cin.get() != '\n');
 
 	return 0; // Successful exit
 }
