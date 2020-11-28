@@ -144,7 +144,12 @@ bool PromptForAudioPassword(const char* passwords[], int numPasswords)
 	}
 
 	// Check for password, fails after 3 unsuccessful attempts by the user.
-	while (fails < 3 && !passwordSuccess) {
+	while (fails < 3 && !passwordSuccess)
+	{
+		do {
+			std::cout << "Press enter when ready to say password...";
+		} while (std::cin.get() != '\n');
+		printf("Please say the password\n");
 		decoded_speech = PredictTextFromMicrophone(); // Capture and decode speech          
 		printf("You Said (%.2f%%): %s\n", confidence * 100, decoded_speech); // Print speech prediction to console
 		passwordSuccess = false;
