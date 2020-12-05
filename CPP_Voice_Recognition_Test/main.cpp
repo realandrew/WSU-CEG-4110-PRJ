@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
-	const char* passwords[] = { // 
+	const char* passwords[] = { // Array of passwords, configurable
 		"password",
 		"open sesame"
 	};
@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 	DoCleanup(); // Cleanup program before closing
 
 	printf("Program exitting...\n");
-	do {
+	do { // Wait for user to allow exit, this makes reading the output easy as the console doesn't immediately close
 		std::cout << "Press enter when ready to end program...";
 	} while (std::cin.get() != '\n');
 
@@ -62,8 +62,8 @@ const char* PredictTextFromMicrophone() {
 }
 
 /*
-* Function that returns if one string contains another string.
-* Used to detect if password was in the sentence said by the user.
+* Function that returns if one string matches another string.
+* Used to detect if password matches the hypothesis of what was said by the user.
 */
 bool StringContainsString(const char* w1, const char* w2)
 {
@@ -71,15 +71,15 @@ bool StringContainsString(const char* w1, const char* w2)
 	int j = 0;
 
 	while (w1[i] != '\0') { // Loop until end of line
-		if (w1[i] == w2[j])
+		if (w1[i] == w2[j]) // Checks if characters match
 		{
 			int init = i;
-			while (w1[i] == w2[j] && w2[j] != '\0')
+			while (w1[i] == w2[j] && w2[j] != '\0') // While characters match and not end of line
 			{
 				j++;
 				i++;
 			}
-			if (w2[j] == '\0') {
+			if (w2[j] == '\0') { // If end of line, characters match.
 				return true;
 			}
 			j = 0;

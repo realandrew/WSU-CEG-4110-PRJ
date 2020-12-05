@@ -12,11 +12,11 @@ uint8 utt_started, in_speech;      // flags for tracking active speech - has spe
 int32 k;                           // holds the number of frames in the audio buffer
 int32 score;
 float64 confidence;
-char const* hyp; // Stores the hypthosis of what the user said
+char const* hyp; // Stores the hypothesis of what the user said
 char const* decoded_speech; // Stores the final prediction of what the user said
 
-bool DoSetup();
-void DoCleanup();
-const char* PredictTextFromMicrophone();
-bool PromptForAudioPassword(const char* passwords[], int numPasswords);
-bool StringContainsString(const char* w1, const char* w2);
+bool DoSetup(); // Handles initialization of the program
+void DoCleanup(); // Handles memory cleanup after the program is finished
+const char* PredictTextFromMicrophone(); // Gets a prediction of what was said in the audio stream coming from the default microphone
+bool PromptForAudioPassword(const char* passwords[], int numPasswords); // Writes a prompt to the console asking for user's audio password
+bool StringContainsString(const char* w1, const char* w2); // Checks if a string matches another string.
