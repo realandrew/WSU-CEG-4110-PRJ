@@ -8,4 +8,5 @@ Note: While this may build in other versions of Visual Studio or other compilers
 2) Open the project in the latest version of Visual Studio
 3) Build the project
 4) Copy DLLs from the Libraries/dlls folder to the folder where your built .exe is.
-5) Done! The .exe should successfully run if you've followed the commands above correctly.
+5) Copy the 'model' folder from within the project folder to where the folder where the .exe is.
+6) Done! The .exe should successfully run if you've followed the commands above correctly.
