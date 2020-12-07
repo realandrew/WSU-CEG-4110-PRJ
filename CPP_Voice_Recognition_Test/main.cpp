@@ -34,6 +34,9 @@ int main(int argc, char* argv[])
 	return 0; // Successful exit
 }
 
+/*
+* Gets a prediction of what was said in the audio stream coming from the default microphone
+*/
 const char* PredictTextFromMicrophone() {
 
 	ad_start_rec(ad); // Start recording on audio input
